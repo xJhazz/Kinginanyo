@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sino Ka?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 50px;
+      background-color: #1a1a1a; /* Dark Gray */
+      color: white;
+      transition: background-color 0.5s;
+    }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #c0392b; /* Deep Red */
+    }
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+    button {
+      font-size: 18px;
+      padding: 10px 20px;
+      border: 2px solid #c0392b; /* Deep Red */
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #2c3e50; /* Dark Blue */
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: #34495e; /* Lighter Navy */
+    }
+    #result-container {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    #result-text {
+      font-size: 36px;
+      font-weight: bold;
+      color: #c0392b;
+      margin-bottom: 20px;
+    }
+    #result-image {
+      width: 300px; /* Adjust size as needed */
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <h1>Sino Ka?</h1>
+  <div class="button-container">
+    <button onclick="showResult('Salamat sa pagiging punong abala pero pakyu ka pa din')">Paul</button>
+    <button onclick="showResult('Von, sana gumaling na ang tapikol mo pero pakyu ka din')">Von</button>
+    <button onclick="showResult('Pakyu ka kasing itim mo tong background')">Wani</button>
+    <button onclick="showResult('Charles, ???')">Charles</button>
+    <button onclick="showResult('Kenn, alam mo na to pero pakyu ka pa din ahhaha')">Kenn</button>
+    <button onclick="showResult('King ina mo cancer ka haha')">Tomo</button>
+    <button onclick="showResult('Glen, king ina mo mag walis ka na ng kalsada! pakyu ka')">Glen</button>
+  </div>
+
+  <div id="result-container">
+    <div id="result-text"></div>
+    <img id="result-image" src="your-image.jpg" alt="Result Image">
+  </div>
+
+  <script>
+    function showResult(name) {
+      document.body.innerHTML = ''; // Clears everything
+      const resultContainer = document.createElement('div');
+      resultContainer.id = 'result-container';
+      resultContainer.style.display = 'flex';
+
+      const resultText = document.createElement('div');
+      resultText.id = 'result-text';
+      resultText.innerText = `${name}`; // Shows only the name
+
+      const resultImage = document.createElement('img');
+      resultImage.id = 'result-image';
+      resultImage.src = 'your-image.jpg'; // Change to your actual image path
+      resultImage.alt = 'Result Image';
+
+      resultContainer.appendChild(resultText);
+      resultContainer.appendChild(resultImage);
+      document.body.appendChild(resultContainer);
+    }
+  </script>
+</body>
+</html>
